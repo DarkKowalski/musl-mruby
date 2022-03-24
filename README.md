@@ -1,5 +1,7 @@
 # Musl MRuby Script Engine
 
+[![CI Tests](https://github.com/DarkKowalski/musl-mruby/actions/workflows/test.yml/badge.svg)](https://github.com/DarkKowalski/musl-mruby/actions/workflows/test.yml)
+
 **[mruby](https://github.com/mruby/mruby) + [musl](https://musl.cc/) + [libressl](https://www.libressl.org/) = a self contained minimalistic Ruby CLI**
 
 ## Build
