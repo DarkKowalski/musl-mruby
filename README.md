@@ -25,9 +25,14 @@ cat << EOF > hello_world.rb
 text = 'Hello World!'
 base64 = Base64.encode(text)
 sha256 = Digest::SHA256.hexdigest(text)
+json = [text].to_json
+extern = Open3.capture3('echo', text)
+
 puts "text: #{text}"
 puts "base64: #{base64}"
 puts "sha256: #{sha256}"
+puts "json: #{json}"
+puts "extern: #{extern}"
 EOF
 
 ldd build/musl-mruby
@@ -38,4 +43,6 @@ ldd build/musl-mruby
 # text: Hello World!
 # base64: SGVsbG8gV29ybGQh
 # sha256: 7f83b1657ff1fc53b92dc18148a1d65dfc2d4b1fa3d677284addd200126d9069
+# json: ["Hello World!"]
+# extern: ["Hello World!\n", "", #<Process::Status: pid=224660,exited(0)>]
 ```
