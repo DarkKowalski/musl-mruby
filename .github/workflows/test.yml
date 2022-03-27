@@ -15,7 +15,7 @@ jobs:
           - { os: ubuntu-20.04, ruby: head }
     name: test ${{ matrix.os }} ${{ matrix.ruby }}
     runs-on: ${{ matrix.os }}
-    timeout-minutes: 5
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v2
       - uses: ruby/setup-ruby@master
